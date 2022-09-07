@@ -16,19 +16,35 @@ public class Game {
         }
 
         player.addMove(position);
-
-        return checkHorizontalRow(board);
+        return winChecker(board);
 
     }
 
-    public String checkHorizontalRow(Board board){
+    private String winChecker(Board board) {
+        if(checkVerticalRow(board)||checkHorizontalRow(board)){
+            return "YOU WON";
+        } return"Next Move";
+    }
+
+    public boolean checkHorizontalRow(Board board){
 
         for (int j = 0; j < 7; j+=3) {
             if (board.getCurrentBoard()[j].equals(board.getCurrentBoard()[j+1]) &&
                     board.getCurrentBoard()[j+1].equals(board.getCurrentBoard()[j+2])) {
-                return "YOU WON";
+                return true;
             }
         }
-        return "Next move";
+        return false;
+    }
+
+    public boolean checkVerticalRow(Board board){
+
+        for (int j = 0; j < 2; j++) {
+            if (board.getCurrentBoard()[j].equals(board.getCurrentBoard()[j+3]) &&
+                    board.getCurrentBoard()[j+3].equals(board.getCurrentBoard()[j+6])) {
+                return true;
+            }
+        }
+        return false;
     }
 }

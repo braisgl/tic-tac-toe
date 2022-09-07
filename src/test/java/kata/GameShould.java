@@ -76,6 +76,33 @@ public class GameShould {
         Assertions.assertEquals("YOU WON", game.play(8));
     }
 
+    @Test
+    public void vertical_match_row_1(){
+        game.play(0);
+        game.play(5);
+        game.play(3);
+        game.play(4);
+        Assertions.assertEquals("YOU WON", game.play(26));
+    }
+
+    @Test
+    public void vertical_match_row_2(){
+        game.play(1);
+        game.play(0);
+        game.play(4);
+        game.play(2);
+        Assertions.assertEquals("YOU WON", game.play(7));
+    }
+
+    @Test
+    public void vertical_match_row_3(){
+        game.play(2);
+        game.play(0);
+        game.play(5);
+        game.play(1);
+        Assertions.assertEquals("YOU WON", game.play(8));
+    }
+
 
 
 }
