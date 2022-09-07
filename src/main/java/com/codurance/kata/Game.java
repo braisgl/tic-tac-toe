@@ -2,7 +2,8 @@ package com.codurance.kata;
 
 public class Game {
 
-    public String board(){
-        return "...\n...\n...";
+    public String[] currentBoard(){
+        return new Board().getCurrentBoard();
     }
+
 }
