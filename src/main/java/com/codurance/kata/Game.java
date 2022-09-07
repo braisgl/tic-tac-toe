@@ -10,12 +10,12 @@ public class Game {
         return board.getCurrentBoard();
     }
 
-    public String play(String token, int position) {
+    public String play(int position) {
         if (!board.getCurrentBoard()[position].equals(".")) {
             return "Position already occupied";
         }
 
-        board.addMove(token, position);
+        board.addMove(position);
 
         return checkHorizontalRow(board);
 
@@ -24,7 +24,7 @@ public class Game {
     public String checkHorizontalRow(Board board){
 
         for (int j = 0; j < 7; j+=3) {
-            if (board.getCurrentBoard()[j].equals(board.getCurrentBoard()[j++]) &&
+            if (board.getCurrentBoard()[j].equals(board.getCurrentBoard()[j+1]) &&
                     board.getCurrentBoard()[j+1].equals(board.getCurrentBoard()[j+2])) {
                 return "YOU WON";
             }
