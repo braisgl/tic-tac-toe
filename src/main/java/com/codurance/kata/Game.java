@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Game {
 
     Board board = new Board();
-
+    Player player = new Player(board);
     public String[] currentBoard(){
         return board.getCurrentBoard();
     }
@@ -15,7 +15,7 @@ public class Game {
             return "Position already occupied";
         }
 
-        board.addMove(position);
+        player.addMove(position);
 
         return checkHorizontalRow(board);
 
@@ -28,7 +28,6 @@ public class Game {
                     board.getCurrentBoard()[j+1].equals(board.getCurrentBoard()[j+2])) {
                 return "YOU WON";
             }
-
         }
         return "Next move";
     }
