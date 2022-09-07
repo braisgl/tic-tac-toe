@@ -49,10 +49,26 @@ public class GameShould {
     }
 
     @Test
-    public void horizontal_match(){
+    public void horizontal_match_row_1(){
         game.play(PLAYER1,0);
         game.play(PLAYER1,1);
         Assertions.assertEquals("YOU WON", game.play(PLAYER1,2));
     }
+
+    @Test
+    public void horizontal_match_row_2(){
+        game.play(PLAYER1,3);
+        game.play(PLAYER1,4);
+        Assertions.assertEquals("YOU WON", game.play(PLAYER1,5));
+    }
+
+    @Test
+    public void horizontal_match_row_3(){
+        game.play(PLAYER1,6);
+        game.play(PLAYER1,7);
+        Assertions.assertEquals("YOU WON", game.play(PLAYER1,8));
+    }
+
+
 
 }
