@@ -3,6 +3,6 @@ package com.codurance.kata;
 public class Game {
 
     public String board(){
-        return null;
+        return "...\n...\n...";
     }
 }

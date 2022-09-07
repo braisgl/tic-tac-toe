@@ -7,9 +7,15 @@ import org.junit.jupiter.api.Assertions;
 
 public class GameShould {
 
-    public Game game;
+    public Game game = new Game();
     @Test
-    public void board(){
-        Assertions.assertEquals("...\n...\n...", game.board());
+    public void empty_board(){
+        String board = "...\n...\n...";
+        Assertions.assertEquals(board, game.board());
+    }
+    @Test
+    public void one_person_on_first_position_on_the_board(){
+        String board = "X..\n...\n...";
+        Assertions.assertEquals(board, game.board());
     }
 }
