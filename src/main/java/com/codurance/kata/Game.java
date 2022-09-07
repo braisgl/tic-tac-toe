@@ -9,10 +9,17 @@ public class Game {
     }
 
     public String play(String token, int position) {
-        if(board.getCurrentBoard()[position]!=null){
+        if (!board.getCurrentBoard()[position].equals(".")) {
             return "Position already occupied";
         }
+
         board.addMove(token, position);
+
+        if (board.getCurrentBoard()[0].equals("X") &&
+                board.getCurrentBoard()[1].equals("X") &&
+                board.getCurrentBoard()[2].equals("X")) {
+            return "YOU WON";
+        }
         return "Next move";
     }
 }
