@@ -8,7 +8,11 @@ public class Game {
         return board.getCurrentBoard();
     }
 
-    public void play(String token, int position) {
+    public String play(String token, int position) {
+        if(board.getCurrentBoard()[position]!=null){
+            return "Position already occupied";
+        }
         board.addMove(token, position);
+        return "Next move";
     }
 }

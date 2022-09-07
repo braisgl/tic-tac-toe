@@ -48,4 +48,11 @@ public class GameShould {
         Assertions.assertEquals("Position already occupied", game.play(PLAYER2, 1));
     }
 
+    @Test
+    public void horizontal_match(){
+        game.play(PLAYER1,0);
+        game.play(PLAYER1,1);
+        Assertions.assertEquals("YOU WON", game.play(PLAYER1,2));
+    }
+
 }
